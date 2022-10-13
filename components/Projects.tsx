@@ -20,7 +20,7 @@ function Project({}: Props) {
 
         <div className='hideScrollChrome h-fit w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20'>
           {projects.map((project, i) => (
-            <div className='w-screen flex-shrink-0 snap-center flex flex-col space-y-3 items-center justify-start p-10 md:p-44'>
+            <div key={i} className='w-screen flex-shrink-0 snap-center flex flex-col space-y-3 items-center justify-start p-10 md:p-44'>
               <motion.img 
                 initial={{
                   y:-300,
