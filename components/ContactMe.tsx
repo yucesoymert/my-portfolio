@@ -6,7 +6,6 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
 import { SocialIcon } from 'react-social-icons';
 
-
 type Inputs = {
     name: string,
     email: string,
