@@ -36,7 +36,6 @@ const WorkExperience: React.FC<Props> = ({experiences}) => {
                 dateEnded={exp.dateEnded}
                 dateStarted={exp.dateStarted}
                 tasks={exp.points}
-                techs={exp.technologies}
               />
             )
           })}
