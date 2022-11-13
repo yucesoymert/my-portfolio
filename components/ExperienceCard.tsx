@@ -13,7 +13,7 @@ type Props = React.PropsWithChildren & {
     techs?: string[];
 }
 
-function ExperienceCard({ companyName,  jobTitle, imageUrl, dateEnded, dateStarted, tasks, techs }: Props) {
+function ExperienceCard({ companyName, jobTitle, imageUrl, dateEnded, dateStarted, tasks, techs }: Props) {
   return (
     <article className='flex flex-col rounded-lg items-center space-y-2 md:space-y-3 flex-shrink-0 w-[300px] md:w-[350px] h-[600px] md:h-[520px] xl:w-[600px] snap-center bg-[#474787]/60 p-4 opacity-40 hover:opacity-100 cursor-pointer gap-2 transition-opacity duration-200 overflow-hidden'>
         {/* image of company */}
@@ -49,8 +49,8 @@ function ExperienceCard({ companyName,  jobTitle, imageUrl, dateEnded, dateStart
             
             {/* summary points */}
             <ul className='list-disc space-y-2 ml-5 text-sm md:text-lg'>
-                {tasks?.map((task) => 
-                    <li>
+                {tasks?.map(( task ,index ) => 
+                    <li key={index }>
                         {task}
                     </li>
                     )
