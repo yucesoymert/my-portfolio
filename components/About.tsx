@@ -1,52 +1,67 @@
-import { motion } from 'framer-motion'
 import React from 'react'
 
-type Props = {}
+import { motion } from 'framer-motion'
+import { PageInfo } from '../typings'
 
-function About({}: Props) {
+import {urlFor} from "../sanity"
+
+type Props = React.PropsWithChildren & {
+    history?: string;
+    image?: string;
+}
+
+const About: React.FC<Props> = ({ history, image }) => {
+    /* console.log("pageInfos-about", pageInfos) */
   return (
     <motion.div
         initial = {{ opacity: 0 }}
         whileInView = {{ opacity: 1 }}
         transition = {{ duration: 1 }}
-        className='relative h-screen w-full flex flex-col justify-start items-center text-center mx-auto px-10 '
+        className='relative h-screen w-full flex flex-col justify-start items-center text-center'
     >
-        <div className='flex flex-col top-24 absolute justify-start items-center max-w-7xl gap-8 md:gap-20 xl:gap-22'>
-            <div className='w-full flex items-center justify-center text-center'>
-                <h3 className='uppercase tracking-[20px] text-gray-100 text-2xl'>
-                    About
-                </h3>
-            </div>
+        <div className='flex flex-col absolute top-24 h-[calc(100vh-96px)] justify-start items-center max-w-7xl'>
+            
+            {/* page title */}
+            <h3 className='w-full flex items-center justify-center uppercase tracking-[20px] text-gray-100 text-2xl'>
+                About
+            </h3>
+            
+            {/* info of myself */}
+            <div className='flex flex-row justify-center items-center h-screen'>
+                <div className='flex flex-col md:flex-row mx-5 md:mx-10 justify-center items-center gap-4 md:justify-center bg-white/5 rounded-lg py-4 md:py-6 md:px-6'>
+                    {/* image of myself */}
+                    <motion.img 
+                        initial = {{
+                            x: -150,
+                            opacity: 0,
+                        }}
+                        transition = {{
+                            duration: 1,
+                        }}
+                        whileInView = {{
+                            x: 0,
+                            opacity: 1,
+                        }}
+                        viewport = {{
+                            once: true,
+                        }}
+                        src={urlFor(image)}
+                        className='-mb-35 flex-shrink-0 w-32 h-32 rounded-full object-cover md:rounded-lg md:w-60 md:h-60 xl:w-[350px] xl:h-[350px]'
+                    />
 
-            <div className='flex flex-col md:flex-row h-fit justify-center items-center gap-5 md:justify-start bg-white/5 rounded-lg p-5'>
-                <motion.img 
-                    initial = {{
-                        x: -200,
-                        opacity: 0,
-                    }}
-                    transition = {{
-                        duration: 1,
-                    }}
-                    whileInView = {{
-                        x: 0,
-                        opacity: 1,
-                    }}
-                    viewport = {{
-                        once: true,
-                    }}
-                    src='https://pbs.twimg.com/profile_images/1416753775667200001/gH_wiKf1_400x400.jpg'
-                    className='-mb-35 flex-shrink-0 w-52 h-52 rounded-full object-cover md:rounded-lg md:w-64 md:h-64 xl:w-[400px] xl:h-[400px]'
-                />
-
-                <div className='space-y-8 px-8 md:px-16 md:text-left mx-auto'>
-                    <h4 className='text-4xl font-semibold'>
-                        Here is a{" "}
-                        <span className='underline decoration-red-300/70'>little</span>{" "}
-                        background  
-                    </h4>
-                    <p className='text-sm md:w-390 overflow-hidden'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
+                    {/* little history of myself */}
+                    <div className='flex flex-col justify-center items-center space-y-3 px-4 md:px-8 md:text-left mx-auto'>
+                        {/* slogan */}
+                        <h4 className='text-lg md:text-xl font-semibold'>
+                            <span className='hidden md:inline-flex'>Let me tell you a</span>{" "}
+                            <span className='underline decoration-gray-300/70'>little</span>{" "}
+                            about myself  
+                        </h4>
+                        {/* history text */}
+                        <p className='text-lg font-thin text-justify overflow-hidden px-6'>
+                            {history}
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
