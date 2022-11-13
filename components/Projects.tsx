@@ -9,7 +9,7 @@ type Props = {
   imageUrl?: string;
 }
 
-const Project: React.FC<Props> = ({projects}) =>{
+const Project: React.FC<Props> = ({ projects }) =>{
   return (
     <motion.div 
     initial = {{ opacity: 0 }}
@@ -65,8 +65,8 @@ const Project: React.FC<Props> = ({projects}) =>{
                 
                 {/* used technologies */}
                 <div className='flex flex-wrap justify-center items-center gap-4'>
-                  {project?.technologies.map((tech) => 
-                  <div className='flex flex-col w-8 h-8 md:w-10 md:h-10'>
+                  {project?.technologies.map(( tech ) => 
+                  <div key={tech["_id"]} className='flex flex-col w-8 h-8 md:w-10 md:h-10'>
                     <img
                       className="w-full h-full object-cover"
                       src={urlFor(tech.image.asset["_ref"]) as any}

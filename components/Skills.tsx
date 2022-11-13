@@ -29,7 +29,7 @@ type Props = {
             {/* skills */}
             <div 
             className='grid grid-cols-3 md:grid-cols-4 mx-auto gap-3 md:gap-7'>
-                {skills.map((skill) => <Skill title={skill.title} rate={skill.progress} imageUrl={skill.image.asset["_ref"]}>{skill.title}</Skill> )}
+                {skills.map((skill) => <Skill title={skill.title} rate={skill.progress} imageUrl={skill.image.asset["_ref"]} key={skill["_id"]}>{skill.title}</Skill> )}
             </div>
         </div>
     </motion.div>

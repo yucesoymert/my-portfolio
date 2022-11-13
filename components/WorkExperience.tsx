@@ -9,7 +9,6 @@ type Props = {
 }
 
 const WorkExperience: React.FC<Props> = ({experiences}) => {
-  console.log("experiences", experiences)
   return (
     <motion.div 
     initial = {{ opacity: 0 }}
@@ -30,7 +29,7 @@ const WorkExperience: React.FC<Props> = ({experiences}) => {
         {experiences.map((exp) => {
             return (
               <ExperienceCard
-                key={exp._id}
+                key={exp["_id"]}
                 imageUrl={exp.companyImage.asset["_ref"]}
                 jobTitle={exp.jobTitle}
                 companyName={exp.company}
