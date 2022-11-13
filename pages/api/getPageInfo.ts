@@ -2,10 +2,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { groq } from 'next-sanity'
 import { sanityClient } from '../../sanity'
-import { PageInfo, Project } from '../../typings'
+import { PageInfo } from '../../typings'
 
 const query = groq `
-    *[__type == "pageInfo" ] [0]
+    *[_type == "pageInfo"] [0]
 `;
 
 type Data = {
