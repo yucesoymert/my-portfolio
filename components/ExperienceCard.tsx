@@ -15,7 +15,7 @@ type Props = React.PropsWithChildren & {
 
 function ExperienceCard({ companyName,  jobTitle, imageUrl, dateEnded, dateStarted, tasks, techs }: Props) {
   return (
-    <article className='flex flex-col rounded-lg items-center space-y-2 md:space-y-3 flex-shrink-0 w-[300px] md:w-[350px] h-[600px] xl:w-[600px] snap-center bg-[#474787]/60 p-4 opacity-40 hover:opacity-100 cursor-pointer gap-2 transition-opacity duration-200 overflow-hidden'>
+    <article className='flex flex-col rounded-lg items-center space-y-2 md:space-y-3 flex-shrink-0 w-[300px] md:w-[350px] h-[600px] md:h-[520px] xl:w-[600px] snap-center bg-[#474787]/60 p-4 opacity-40 hover:opacity-100 cursor-pointer gap-2 transition-opacity duration-200 overflow-hidden'>
         {/* image of company */}
         <div className='w-36 h-10 md:w-[200px] px-4 md:h-[80px] shadow-lg'>
             <motion.img
@@ -43,17 +43,6 @@ function ExperienceCard({ companyName,  jobTitle, imageUrl, dateEnded, dateStart
 
             {/* {company name} */}
             <p className='font-thin text-lg text-white/90 md:text-lg xl:text-2xl'>{companyName}</p>
-
-            {/* {tech used} */}
-            {/* <div className='flex space-x-2 my-2'>
-                {techs?.map((tech) => (
-                    <img 
-                        className='w-10 h-10 rounded-xl md:w-8 md:h-8'
-                        src={urlFor(tech) as any}
-                        alt=""
-                    />
-                ))}
-            </div> */}
 
             {/* working time */}
             <p className='uppercase py-2 text-white/60 font-thin text-sm'>{dateStarted} - {dateEnded}</p>
