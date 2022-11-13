@@ -6,15 +6,16 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      'sans': ['Raleway, sans-serif'],
+      sans: ["Raleway, sans-serif"],
     },
     extend: {
-      colors : {
-        'dark-blue': '#2c2c54',
-      }
+      colors: {
+        "dark-blue": "#2c2c54",
+      },
     },
   },
-  plugins: [
-    require('tailwind-scrollbar'),
-],
-}
+  plugins: [require("tailwind-scrollbar")],
+  variants: {
+    scrollbar: ["rounded"],
+  },
+};
