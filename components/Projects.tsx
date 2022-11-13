@@ -26,7 +26,7 @@ const Project: React.FC<Props> = ({projects}) =>{
         {/* projects section */}
         <div className='h-fit w-full flex justify-start overflow-x-scroll overflow-y-hidden z-20 rounded-[12px] snap-x snap-mandatory scrollbar-thin scrollbar-thumb-white/75 scrollbar-thumb-rounded-full'>
           {projects.map((project, i) => (
-            <div key={i} className='w-screen flex-shrink-0 snap-center flex flex-col space-y-3 items-center justify-start p-10 gap-8 '>
+            <div key={i} className='w-screen flex-shrink-0 snap-center flex flex-col space-y-3 items-center justify-start p-10 gap-8 md:gap-4'>
 
               {/* mockup of project */}
               <div className='w-[310px] h-[170px] md:w-[620px] md:h-[340px]'>
