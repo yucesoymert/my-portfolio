@@ -36,7 +36,7 @@ const Hero: React.FC<Props> = ({ name, image, role}) => {
         <div className='relative w-32 h-32 md:w-40 md:h-40 mx-auto'>
             <img
                 className='w-full h-full object-cover rounded-full'
-                src={urlFor(image)}
+                src={urlFor(image) as any}
                 alt=''
             />
         </div>
