@@ -30,7 +30,7 @@ const WorkExperience: React.FC<Props> = ({experiences}) => {
             return (
               <ExperienceCard
                 key={exp["_id"]}
-                imageUrl={exp.companyImage.asset["_ref"]}
+                imageUrl={exp.companyImage.asset["_ref"] as any}
                 jobTitle={exp.jobTitle}
                 companyName={exp.company}
                 dateEnded={exp.dateEnded}

@@ -45,7 +45,7 @@ const About: React.FC<Props> = ({ history, image }) => {
                         viewport = {{
                             once: true,
                         }}
-                        src={urlFor(image)}
+                        src={urlFor(image) as any}
                         className='-mb-35 flex-shrink-0 w-32 h-32 rounded-full object-cover md:rounded-lg md:w-60 md:h-60 xl:w-[350px] xl:h-[350px]'
                     />
 
