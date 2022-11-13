@@ -46,8 +46,8 @@ const Home: NextPage<Props> = ({ skills, experiences, pageInfos, projects, socia
   /* console.log("skills", skills) */
   /* console.log("experiences", experiences) */
   /* console.log("pageInfos-index.tsx", pageInfos[0]) */
-  console.log("projects", projects)
-  console.log("socials", socials)
+  /* console.log("projects", projects) */
+  /* console.log("socials", socials) */
   return (
     <div className="bg-dark-blue text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar-track-gray-400/20 scrollbar-thumb-red-500/40">
       <Head>
