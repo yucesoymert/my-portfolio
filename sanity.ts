@@ -2,10 +2,11 @@ import { createClient } from "next-sanity";
 import createImageUrlBuilder from "@sanity/image-url";
 
 export const config = {
-    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
+    dataset: process.env.SANITY_DATASET || "production",
     projectId: process.env.SANITY_PROJECT_ID!,
     apiVersion: "2022-11-13",
-    useCdn: process.env.NODE_ENV === "production",
+    useCdn: false,
+    /* process.env.NODE_ENV === "production" */
 }
 
 //set up client for fetching data in the getProps page functions
