@@ -3,13 +3,16 @@ import Link from 'next/link';
 
 import { SocialIcon } from 'react-social-icons';
 import { motion } from "framer-motion";
-import { HomeIcon } from '@heroicons/react/24/solid'
+import { HomeIcon, DocumentTextIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
 
-type Props = {}
+type Props = {
+    socials: Social[];
+  }
 
-function Header({}: Props) {
+const Header: React.FC<Props> = ({ socials }) => {
   return (
-    <header className='sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-10 xl:items-center'>
+    <header className='sticky top-0 p-5 flex items-start justify-between h-20 max-w-7xl mx-auto z-10 xl:items-center bg-dark-blue'>
+        {/* left side */}
         <motion.div 
         initial={{ 
             x: -500,
@@ -23,23 +26,27 @@ function Header({}: Props) {
         }}
         transition={{ duration: 1.5 }}
         className='flex flex-row items-center gap-1'>
-            {/* Social Icons */}
+        {/* social links */}
+            {/* resume */}
+            <a 
+            className='sticky flex justify-center' 
+            href={socials[2].url}
+            target="__blank" >
+                <div className='flex p-3 items-center cursor-pointer justify-center filter text-[#dfe6e9] hover:bg-white/10 rounded-lg'>
+                    <DocumentTextIcon className='h-6 w-6'/>
+                </div>
+            </a>
+            {/* github */}
             <SocialIcon 
-                url="https://twitter.com/mrtycsy"
+                url={socials[1].url}
                 target="__blank"
                 fgColor="#dfe6e9"
                 bgColor="transparent"
                 className='hover:bg-white/10 rounded-lg'
             />
+            {/* linkedin */}
             <SocialIcon 
-                url="https://github.com/yucesoymert"
-                target="__blank"
-                fgColor="#dfe6e9"
-                bgColor="transparent"
-                className='hover:bg-white/10 rounded-lg'
-            />
-            <SocialIcon 
-                url="https://linkedin.com/in/mertyucesoyy"
+                url={socials[0].url}
                 target="__blank"
                 fgColor="#dfe6e9"
                 bgColor="transparent"
@@ -47,6 +54,7 @@ function Header({}: Props) {
             />
         </motion.div>
         
+        {/* right side */}
         <motion.div 
         initial={{ 
             x: 500,
@@ -59,23 +67,22 @@ function Header({}: Props) {
             scale: 1,
         }}
         transition={{ duration: 1.5 }}
-        className='flex flex-row items-center cursor-pointer gap-2'>
-            <div className='sticky flex justify-center'>
-                <Link href='#hero'>
-                    <div className='flex p-3 items-center cursor-pointer justify-center filter text-[#dfe6e9] hover:bg-white/10 rounded-lg'>
-                        <HomeIcon className='h-6 w-6'/>
-                    </div>
-                </Link>
-            </div>
+        className='flex flex-row items-center cursor-pointer gap-2'
+        >
+        {/* social icons */}
+            {/* navigate of home  */}
+            <Link className='sticky flex justify-center'href='#hero'>
+                <div className='flex p-3 items-center cursor-pointer justify-center filter text-[#dfe6e9] hover:bg-white/10 rounded-lg'>
+                    <HomeIcon className='h-6 w-6'/>
+                </div>
+            </Link>
+            {/* navigate  of contact me  */}
             <Link href="#contact" >
                 <div className='flex flex-row justify-start items-center text-center gap-1 rounded-lg px-2 hover:bg-white/10'>
                     <div className='w-12 h-12 p-0 flex justify-center items-center'>
-                        <SocialIcon 
-                            network='email'
-                            fgColor="#dfe6e9"
-                            bgColor="transparent"
-                            className='cursor-pointer'
-                        />
+                        <div className='flex p-3 items-center cursor-pointer justify-center'>
+                            <EnvelopeIcon className='h-6 w-6'/>
+                        </div>
                     </div>
                     <p className='uppercase hidden md:inline-flex text-sm h-12 justify-center pl-2 pr-3 items-center text-center text-[#dfe6e9]'>Get In Touch</p>
                 </div>
