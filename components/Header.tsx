@@ -2,8 +2,10 @@ import React from 'react'
 import Link from 'next/link';
 
 import { SocialIcon } from 'react-social-icons';
-import { motion } from "framer-motion";
 import { HomeIcon, DocumentTextIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
+import { motion } from "framer-motion";
+
+import { Social } from '../typings'
 
 type Props = {
     socials: Social[];

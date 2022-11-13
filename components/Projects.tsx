@@ -1,8 +1,9 @@
 import React from 'react'
 
 import { motion } from "framer-motion";
-import { Project } from '../typings'
 import {urlFor} from "../sanity"
+
+import { Project } from '../typings'
 
 type Props = {
   projects: Project[];
