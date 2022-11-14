@@ -58,7 +58,7 @@ const About: React.FC<Props> = ({ history, image }) => {
                             about myself  
                         </h4>
                         {/* history text */}
-                        <p className='text-lg font-thin text-justify overflow-hidden px-6'>
+                        <p className='text-sm leading-relaxed font-thin text-justify overflow-hidden px-6'>
                             {history}
                         </p>
                     </div>
