@@ -56,7 +56,7 @@ const Project: React.FC<Props> = ({ projects }) =>{
               <div className='flex flex-col gap-3 space-y-4 px-0 md:px-10 w-[300px] md:w-full max-w-6xl'>
                 {/* number of project */}
                 <h4 className='text-lg md:text-3xl text-center font-semibold'>
-                  <a className='hover:bg-white/10 px-3 py-2 hover:rounded-lg' href={project.linkToBuild} target="_blank">{project.title}</a>
+                  <a className='hover:bg-white/10 px-3 py-2 hover:rounded-lg' href={project.linkToBuild} target="_blank" rel="noreferrer">{project.title}</a>
                 </h4>
                 
                 {/* description of project */}
