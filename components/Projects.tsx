@@ -20,7 +20,7 @@ const Project: React.FC<Props> = ({ projects }) =>{
     transition = {{ duration: 0.6 }}
     className='h-screen relative justify-center items-center'
     >
-      <div className='absolute h-[calc(100vh-16px)] top-24 flex flex-col overflow-hidden text-left max-w-full z-0  mx-auto '>
+      <div className='absolute h-[calc(100vh-96px)] top-24 flex flex-col overflow-hidden text-left max-w-full z-0  mx-auto '>
         {/* page title */}
         <h3 className='w-full flex justify-center items-center uppercase tracking-[20px] text-gray-100 text-2xl'>
           Projects
